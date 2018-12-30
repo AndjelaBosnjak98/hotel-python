@@ -1,8 +1,3 @@
-#ZAGLAVLJE APLIKACIJE
-
-
-
-
 #LOGOVANJE KORISNIKA
 
 def logovanje(korisnickoIme,lozinka):
