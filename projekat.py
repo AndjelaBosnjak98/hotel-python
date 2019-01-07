@@ -13,13 +13,13 @@ def logovanje(korisnickoIme,lozinka):
 def ulogujSe():
 	while True:
 		korisnickoIme= input("Korisnicko ime: ")
-		if not len(korisnickoIme) > 0:
+		if  len(korisnickoIme) == 0:
 			print("Korisnicko ime ne moze biti prazno polje.")
 		else:
 			break
 	while True:
 		lozinka= input("Lozinka: ")
-		if not len(lozinka) > 0:
+		if  len(lozinka) == 0:
 			print("Lozinka ne moze biti prazno polje.")
 		else:
 			break
@@ -42,29 +42,30 @@ def registrujSe():
 			break
 	while True:
 		lozinka= input("Nova lozinka: ")
-		if not len(lozinka) > 0:
+		if  len(lozinka) == 0:
 			print("Lozinka ne moze biti prazno polje.")	
 			continue
 		else:
 			break
 	while True:
 		ime= input("Unesite ime: ")
-		if not len(ime) > 0:
+		if  len(ime) == 0:
 			print("Ime ne moze biti prazno polje.")
 			continue
 		else:
 			break
 	while True:
 		prezime= input("Unesite prezime: ")
-		if not len(prezime) > 0:
+		if  len(prezime) == 0:
 			print("Prezime ne moze biti prazno polje.")
 			continue
 		else:
 			break
 	while True:
-		kontaktTelefon= input("Unesite kontakt telefon: ")
+		kontaktTelefon= (input("Unesite kontakt telefon: "))
 		if not len(kontaktTelefon) > 0:
 			print("Kontakt telefon ne moze biti prazno polje.")
+	
 			continue
 		else:
 			break
@@ -77,6 +78,33 @@ def registrujSe():
 			break
 	matricaZaUnos=[[korisnickoIme,lozinka,ime,prezime,kontaktTelefon,emailAdresa,"korisnik"]]
 	dodajUDatoteku("korisnici.txt",matricaZaUnos)
+
+#PREGLED HOTELA
+def pregledHotela():
+	
+
+	
+	
+
+#def ponudaSoba():
+	#print("Smestaj za goste\n========")
+	#print("1. Jednokrevetna soba")
+	#print("2. Dvokrevetna soba")
+	#print("3. Trokrevetna soba")
+	#print("4. Apartman")
+
+
+#def jednokrevetna():
+	#print("")
+
+
+
+
+
+
+
+
+
 	
 
 def glavniMeni():
@@ -118,10 +146,9 @@ def glavniMeni():
 
 	
 
-def pregledHotela():
-	pass
 
-def pregledHotela():
+
+def pretragaHotela():
 	pass	
 
 def najboljiHoteli():
