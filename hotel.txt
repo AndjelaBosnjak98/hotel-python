@@ -1,1 +1,6 @@
-111111|Park|Novi Sad|
+111111|Park|Novi Sad|jednokrevetna|ne|da|4
+111111|Park|Novi Sad|dvokrevetna|da|da|4
+111111|Park|Novi Sad|trokrevetna|da|da|5
+222222|Vojvodina|Novi Sad|jednokrevetna|ne|da|3
+222222|Vojvodina|Novi Sad|dvokrevetna|da|da|3
+222222|Vojvodina|Novi Sad|trokrevetna|da|da|4

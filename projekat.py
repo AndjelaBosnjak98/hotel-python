@@ -1,3 +1,5 @@
+import sys, traceback
+
 #LOGOVANJE KORISNIKA
 
 def logovanje(korisnickoIme,lozinka):
@@ -27,7 +29,10 @@ def ulogujSe():
 	if logovanje(korisnickoIme,lozinka):
 		return session(korisnickoIme)
 	else:
-		print("Pogresno korisnicko ime ili lozinka.")			
+		print("Pogresno korisnicko ime ili lozinka.")	
+
+
+
 
 							
 
@@ -81,18 +86,39 @@ def registrujSe():
 
 #PREGLED HOTELA
 def pregledHotela():
+	#import pdb; pdb.set_trace()
+	with open("hotel.txt" , "r") as hoteli:
+		for line in hoteli:
+			#import pdb; pdb.set_trace()
+			hotel= line.split("|")
+			print("Naziv hotela: ")
+			print(hotel[1]) 
+			print("Adresa hotela: ")
+			print(hotel[2])
+			print("Sobe hotela: ")
+			print(hotel[3])
+			print("Bazen: ")
+			print(hotel[4])
+			print("Restoran: ")
+			print(hotel[5])
+			print("Ocena hotela: ")
+			print(hotel[6],"\n===========================")
+
+
+
+
 	
 
 	
 	
-
-#def ponudaSoba():
-	#print("Smestaj za goste\n========")
-	#print("1. Jednokrevetna soba")
-	#print("2. Dvokrevetna soba")
-	#print("3. Trokrevetna soba")
-	#print("4. Apartman")
-
+"""
+def ponudaSoba():
+	print("Smestaj za goste========")
+	print("1. Jednokrevetna soba")
+	print("2. Dvokrevetna soba")
+	print("3. Trokrevetna soba")
+	print("4. Apartman")
+"""
 
 #def jednokrevetna():
 	#print("")
@@ -118,7 +144,9 @@ def glavniMeni():
 	
 	while True:
 		try:
-			izbor= int(input("Izaberite stavku menija: "))
+			izbor= input("Izaberite stavku menija: ")
+			izbor = int(izbor)
+			
 			if izbor <0 or izbor >5:
 				print("Molimo unesite broj izmedju 0 i 5.")
 				continue
@@ -140,8 +168,12 @@ def glavniMeni():
 					continue	
 				else:
 					break
-		except:
+		except Exception as e:
 			print("Molimo unesite broj izmedju 0 i 5.")
+			print('Stack trace:')
+			exc_type, exc_value, exc_traceback = sys.exc_info()
+			traceback.print_exception(exc_type, exc_value, exc_traceback,
+                              		  limit=5, file=sys.stdout)
 			continue
 
 	
