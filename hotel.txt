@@ -1,6 +1,21 @@
 111111|Park|Novi Sad|jednokrevetna|ne|da|4
-111111|Park|Novi Sad|dvokrevetna|da|da|4
-111111|Park|Novi Sad|trokrevetna|da|da|5
+111112|Park|Novi Sad|dvokrevetna|da|da|4
+111113|Park|Novi Sad|trokrevetna|da|da|4
 222222|Vojvodina|Novi Sad|jednokrevetna|ne|da|3
-222222|Vojvodina|Novi Sad|dvokrevetna|da|da|3
-222222|Vojvodina|Novi Sad|trokrevetna|da|da|4
+222223|Vojvodina|Novi Sad|dvokrevetna|da|da|3
+222224|Vojvodina|Novi Sad|trokrevetna|da|da|3
+333333|Aleksandar|Novi Sad|jednokrevetna|da|da|5
+333334|Aleksandar|Novi Sad|dvokrevetna|ne|da|5
+333335|Aleksandar|Novi Sad|trokrevetna|da|da|5
+444444|Putnik|Novi Sad|jednokrevetna|ne|ne|3
+444445|Putnik|Novi Sad|dvokrevetna|da|ne|3
+444446|Putnik|Novi Sad|trokrevetna|da|da|3
+555555|Beograd|Beograd|jednokrevetna|da|da|5
+555556|Beograd|Beograd|dvokrevetna|da|da|5
+555557|Beograd|Beograd|trokrevetna|da|da|5
+666666|Livade|Preljina|jednokrevetna|da|ne|2
+666667|Livade|Preljina|dvokrevetna|da|da|2
+666668|Livade|Preljina|trokrevetna|da|da|2
+777777|Fontana|Backa Palanka|jednokrevetna|ne|da|3
+777778|Fontana|Backa Palanka|dvokrevetna|ne|da|3
+777779|Fontana|Backa Palanka|trokrevetna|ne|da|3

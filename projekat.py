@@ -91,7 +91,7 @@ def pregledHotela():
 		for line in hoteli:
 			#import pdb; pdb.set_trace()
 			hotel= line.split("|")
-			print("Naziv hotela: ")
+			print("\nNaziv hotela: ")
 			print(hotel[1]) 
 			print("Adresa hotela: ")
 			print(hotel[2])
@@ -181,10 +181,19 @@ def glavniMeni():
 
 
 def pretragaHotela():
-	pass	
+	pass
 
 def najboljiHoteli():
-	pass	
+	print("\nOvo su najbolje ocenjeni hoteli:\n")
+			
+
+
+			
+
+		
+		
+			
+
 	
 def dodajUDatoteku(nazivDatoteke,podaci):
 	f=open(nazivDatoteke,"a")
