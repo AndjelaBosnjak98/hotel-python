@@ -1,0 +1,33 @@
+"""#ULOGUJ SE KORISNICE
+def ulogujSe():
+	while True:
+		korisnickoIme= input("Korisnicko ime: ")
+		if  len(korisnickoIme) == 0:
+			print("Korisnicko ime ne moze biti prazno polje.")
+		else:
+			break
+	while True:
+		lozinka= input("Lozinka: ")
+		if  len(lozinka) == 0:
+			print("Lozinka ne moze biti prazno polje.")
+		else:
+			break
+
+	
+	if logovanje(korisnickoIme,lozinka):
+		return
+	else:
+		print("Pogresno korisnicko ime ili lozinka.")
+
+
+
+
+#LOGOVANJE KORISNIKA
+
+	
+def logovanje(korisnickoIme,lozinka):
+	if korisnickoIme in korisnik:
+		if lozinka == korisnici[korisnickoIme]["lozinka"]:
+			print("Logovanje je uspesno.")
+			return True
+	return False		"""

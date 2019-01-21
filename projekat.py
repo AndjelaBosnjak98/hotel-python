@@ -1,40 +1,20 @@
 import sys, traceback
 
-#LOGOVANJE KORISNIKA
-
-def logovanje(korisnickoIme,lozinka):
-	if korisnickoIme in korisnici:
-		if lozinka == korisnici[korisnickoIme]["lozinka"]:
-			print("Logovanje je uspesno.")
-			return True
-	return False		
-
-
-
-#ULOGUJ SE KORISNICE
 def ulogujSe():
-	while True:
-		korisnickoIme= input("Korisnicko ime: ")
-		if  len(korisnickoIme) == 0:
-			print("Korisnicko ime ne moze biti prazno polje.")
-		else:
-			break
-	while True:
-		lozinka= input("Lozinka: ")
-		if  len(lozinka) == 0:
-			print("Lozinka ne moze biti prazno polje.")
-		else:
-			break
+	
+	korisnickoIme= input("Unesite vase korisnicko ime: ")
+	lozinka= input("Unesite vasu lozinku: ")
+	with open("korisnici.txt" , "r") as korisnici:
+		for line in korisnici:
+			loginInfo= line.split("|")
+		if korisnickoIme == loginInfo[0] and lozinka == loginInfo[1]:
+			print("\nUspesno ste se ulogovali.\n")
+			return True
+	print("\nUneli ste pogresne podatke.\n")
+	return False	
 
-	if logovanje(korisnickoIme,lozinka):
-		return session(korisnickoIme)
-	else:
-		print("Pogresno korisnicko ime ili lozinka.")	
-
-
-
-
-							
+			
+				
 
 #REGISTRACIJA KORISNIKA
 def registrujSe():
@@ -105,36 +85,59 @@ def pregledHotela():
 			print(hotel[6],"\n===========================")
 
 
+def pretragaHotela():
+	print("\n\nPretraga hotela po jednom ili vise kriterijuma: \n")
+	print("1. Pretraga po jednom kriterijumu.")
+	print("2. Pretraga po vise kriterijuma.")		
+
+	while True:
+		try:
+			choice=input("Izaberite stavku menija: ")
+			choice=int(choice)
+
+			if choice <0 or choice>3:
+				print("Molimo unesite broj izmedju 1 i 3.")
+				continue
+			else:
+				if choice == 1:
+					print("\n1. Pretraga po nazivu: \n")
+					print("\n2. Pretraga po adresi: \n")
+					print("\n3. Pretraga po oceni: \n")
 
 
-	
+					odabir=input("Unesite kriterijum: ")
+					odabir=int(odabir)
 
-	
-	
-"""
-def ponudaSoba():
-	print("Smestaj za goste========")
-	print("1. Jednokrevetna soba")
-	print("2. Dvokrevetna soba")
-	print("3. Trokrevetna soba")
-	print("4. Apartman")
-"""
+					if odabir == 1:
+						print(hotel[1])
+					elif odabir == 2:
+						print(hotel[2])
+					elif odabir == 3:
+						print(hotel[6])	
 
-#def jednokrevetna():
-	#print("")
+					
+
+					stavka=input("Unesite zeljeni kriterijum.")
+					stavka=int(stavka)
+
+					if stavka == 1:
+						print(hotel[1])
+						continue
+					elif stavka == 2:
+						print(hotel[2])
+						continue
+					elif stavka == 3:
+						print(hotel[6])
+						continue	
+					else:
+						break
+		except:
+			pass				
 
 
-
-
-
-
-
-
-
-	
 
 def glavniMeni():
-	print("Glavni meni\n=========")
+	print("Glavni meni\n============")
 	print("1. Registracija korisnika")
 	print("2. Prijava korisnika")
 	print("3. Pregled hotela")
@@ -176,23 +179,12 @@ def glavniMeni():
                               		  limit=5, file=sys.stdout)
 			continue
 
-	
 
 
 
-def pretragaHotela():
-	pass
 
 def najboljiHoteli():
 	print("\nOvo su najbolje ocenjeni hoteli:\n")
-			
-
-
-			
-
-		
-		
-			
 
 	
 def dodajUDatoteku(nazivDatoteke,podaci):
@@ -201,11 +193,22 @@ def dodajUDatoteku(nazivDatoteke,podaci):
 		f.write("|".join(niz)+"\n")
 
 
+def citajIzDatoteke(nazivDatoteke):
+	with open("korisnici.txt", "r") as korisnici:
+		for korisnik in korisnici:
+			korisnik.append("|".join(korisnik)+"\n")
+
+		
+
+
+
 
 if __name__ == '__main__':
-	print("\t\t\t\tDobrodosli".upper())
-	print("\t\tOvde mozete da rezervisete sobe u hotelu.")
-	glavniMeni()			
+	print("\n\n\t\t==> Dobrodosli! <==".upper())
+	print("\n\t\tAplikacija za rezervacije hotela.\n\n".upper())
+	korisnik= None
+	glavniMeni()
+
 
 
 
