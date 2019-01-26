@@ -1,19 +1,41 @@
 import sys, traceback
 
+def dodavanjeHotela():
+	pass
+
+
+			
+def menizaadmina():
+	print("Dodavanje hotela")
+	opcija = input("Opcija: ")
+	if opcija not in ("1"):
+		print("Izabrali ste nepostojecu opciju.\nMolimo pokusajte ponovo.")
+		opcija = input("Opcija: ")
+	if opcija == "1": dodavanjeHotela()
+
 def ulogujSe():
 	
 	korisnickoIme= input("Unesite vase korisnicko ime: ")
 	lozinka= input("Unesite vasu lozinku: ")
+	kor = []
+	boolean = False
 	with open("korisnici.txt" , "r") as korisnici:
 		for line in korisnici:
 			loginInfo= line.split("|")
-		if korisnickoIme == loginInfo[0] and lozinka == loginInfo[1]:
-			print("\nUspesno ste se ulogovali.\n")
-			return True
-	print("\nUneli ste pogresne podatke.\n")
-	return False	
+			if korisnickoIme == loginInfo[0] and lozinka == loginInfo[1]:
+				print("\nUspesno ste se ulogovali.\n")
+				boolean = True
+				kor.append(loginInfo)
 
-			
+			if boolean == True:
+				if kor[0][-1] == "administrator":
+					menizaadmina()
+					print("admin")
+				elif kor[0][-1]=="recepcioner":
+					pass
+			if boolean == False:
+				print("\nUneli ste pogresne podatke.\n")
+		
 				
 
 #REGISTRACIJA KORISNIKA
@@ -159,7 +181,7 @@ def glavniMeni():
 					continue
 				elif izbor ==2:
 					ulogujSe()
-					continue
+					
 				elif izbor ==3:
 					pregledHotela()
 					continue
